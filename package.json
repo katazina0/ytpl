@@ -7,11 +7,11 @@
     "playlist"
   ],
   "bugs": {
-    "url": "https://github.com/skick1234/node-ytpl/issues"
+    "url": "https://github.com/distubejs/ytpl/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/skick1234/node-ytpl.git"
+    "url": "git://github.com/distubejs/ytpl.git"
   },
   "license": "MIT",
   "author": "Skick (https://github.com/skick1234)",

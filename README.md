@@ -1,52 +1,46 @@
-# node-ytpl
+# @distube/ytpl
 
-[![NPM version](https://img.shields.io/npm/v/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
-[![NPM downloads](https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
-[![codecov](https://codecov.io/gh/timeforaninja/node-ytpl/branch/master/graph/badge.svg)](https://codecov.io/gh/timeforaninja/node-ytpl)
-[![Known Vulnerabilities](https://snyk.io/test/github/timeforaninja/node-ytpl/badge.svg)](https://snyk.io/test/github/timeforaninja/node-ytpl)
-[![Discord](https://img.shields.io/discord/484464227067887645.svg)](https://discord.gg/V3vSCs7)
+A light-weight ytpl for [DisTube](https://distube.js.org). Original [ytpl](https://www.npmjs.com/package/ytpl).
+Simple js only package to resolve YouTube Playlists.
+Does not require any login or Google-API-Key.
 
-[![NPM info](https://nodei.co/npm/ytpl.png?downloads=true&stars=true)](https://nodei.co/npm/ytpl/)
+# Installation
 
-Simple js only module to resolve YouTube playlist ids
-Doesn't need any login or GoogleAPI key
-
-*Forked from [ytpl](https://www.npmjs.com/package/ytsr).*
-
-# Support
-You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
+```bash
+npm install @distube/ytpl
+```
 
 # Usage
 
 ```js
-var ytpl = require('ytpl');
+const ytpl = require("@distube/ytpl");
 
-ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg').then(playlist => {
-  dosth(playlist);
-}).catch(err => {
-  console.error(err);
-});
+const playlist = await ytpl("https://www.youtube.com/playlist?list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn");
 ```
 
-
 # API
+
 ### ytpl(id, [options])
 
 Attempts to resolve the given playlist id
 
-* `id`
-    * id of the yt-playlist
-    * or playlist link
-    * or user link (resolves uploaded playlist)
-    * or channel link (resolves uploaded playlist)
-* `options`
-    * object with options
-    * possible settings:
-    * limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist - numbers <1 result in the default being used
-    * All additional parameters will get passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
+- `id`
+  - id of the yt-playlist
+  - or a playlist url
+  - or a user url (resolves to uploaded playlist)
+  - or a channel url (resolves to uploaded playlist)
+- `options`
 
-* returns a Promise
-* [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output)
+  - object with options
+  - possible settings:
+  - gl[String] -> 2-Digit Code of a Country, defaults to `US` - Allows for localisation of the request
+  - hl[String] -> 2-Digit Code for a Language, defaults to `en` - Allows for localisation of the request
+  - utcOffsetMinutes[Number] -> Offset in minutes from UTC, defaults to `-300` - Allows for localisation of the request
+  - limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist - numbers <1 result in the default being used
+  - requestOptions[Object] -> All additional parameters will get passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
+
+- returns a Promise
+- [Example response](https://github.com/distubejs/ytpl/blob/master/example/example_output)
 
 ### ytpl.validateID(string)
 
@@ -58,18 +52,8 @@ Returns a playlist ID from a YouTube URL. Can be called with the playlist ID dir
 
 Returns a promise.
 
-
 # Related / Works well with
 
-* [node-ytdl-core](https://github.com/fent/node-ytdl-core)
-* [node-ytsr](https://github.com/TimeForANinja/node-ytsr)
-
-
-# Install
-
-    npm install --save ytpl
-
-
-
-# License
-MIT
+- [DisTube](https://github.com/skick1234/DisTube) - A Discord.js module to simplify your music commands and play songs with audio filters on Discord without any API key.
+- [@distube/ytdl-core](https://github.com/distubejs/ytdl-core) - DisTube fork of [ytpl](https://github.com/fent/node-ytdl-core).
+- [@distube/ytsr](https://github.com/distubejs/ytsr) - DisTube fork of [ytsr](https://github.com/TimeForANinja/node-ytsr).
