@@ -1,9 +1,13 @@
+import Miniget from "miniget";
 declare module '@distube/ytpl' {
   namespace ytpl {
     interface options {
       /** Limits the pulled items. */
       limit?: number;
-      headers?: { [key: string]: string; };
+      gl?: string;
+      hl?: string;
+      utcOffsetMinutes?: number;
+      requestOptions?: Miniget.Options;
     }
     interface result {
       id: string;
