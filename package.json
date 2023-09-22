@@ -1,6 +1,6 @@
 {
   "name": "@distube/ytpl",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "Anonymous YouTube playlist resolver. Made for distube.js.org",
   "keywords": [
     "youtube",
@@ -31,7 +31,7 @@
     "lint:typings:fix": "tslint --fix typings/index.d.ts"
   },
   "dependencies": {
-    "undici": "^5.25.1"
+    "undici": "^5.25.2"
   },
   "devDependencies": {
     "dtslint": "^4.2.1",
