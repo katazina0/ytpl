@@ -37,7 +37,7 @@ Attempts to resolve the given playlist id
   - hl[String] -> 2-Digit Code for a Language, defaults to `en` - Allows for localisation of the request
   - utcOffsetMinutes[Number] -> Offset in minutes from UTC, defaults to `-300` - Allows for localisation of the request
   - limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist - numbers <1 result in the default being used
-  - requestOptions[Object] -> All additional parameters will get passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
+  - requestOptions[Object] -> All additional parameters will get passed to undici's [request options](https://github.com/nodejs/undici#undicirequesturl-options-promise), which is used to do the https requests
 
 - returns a Promise
 - [Example response](https://github.com/distubejs/ytpl/blob/master/example/example_output)
