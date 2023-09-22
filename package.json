@@ -31,7 +31,7 @@
     "lint:typings:fix": "tslint --fix typings/index.d.ts"
   },
   "dependencies": {
-    "miniget": "^4.2.3"
+    "undici": "^5.25.1"
   },
   "devDependencies": {
     "dtslint": "^4.2.1",

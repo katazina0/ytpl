@@ -1,4 +1,4 @@
-import Miniget from "miniget";
+import { request } from 'undici';
 declare module '@distube/ytpl' {
   namespace ytpl {
     interface options {
@@ -7,7 +7,7 @@ declare module '@distube/ytpl' {
       gl?: string;
       hl?: string;
       utcOffsetMinutes?: number;
-      requestOptions?: Miniget.Options;
+      requestOptions?: Parameters<typeof request>[1];
     }
     interface result {
       id: string;
